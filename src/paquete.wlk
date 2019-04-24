@@ -1,8 +1,14 @@
+import mensajeros.*
+//import transporte.*
+import destinos.*
+
 object paquete {
-	var destino
+
+	var property destino = matrix
 	var pago = false
-	method destino(lugar){
-		
+	
+	method estaPago(){
+		return pago
 	}
 	method pagar(){
 		pago = true

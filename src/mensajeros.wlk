@@ -1,17 +1,21 @@
 import transporte.*
 import destinos.*
+import paquete.*
 
 object mensajeria {
-	const mensajero = #{}
+	var mensajeros = #{}
 	method contratar(alguien) {
-		mensajero.add(alguien)  	
- 	}  		 		
+		mensajeros.add(alguien)  	
+ 	}  	
+ 	method sePuedeEntregar(mensajero){
+		return (paquete.estaPago() ) and ( paquete.destino().dejaPasar(mensajero))
+	}	 		
 }
 object roberto{
 	var llamar = false
 	var peso = 90
 	var property transporte = bicicleta
-	method llamar(){
+	method puedeLlamar(){
 		return llamar
 	}
 	method peso(){
@@ -22,12 +26,20 @@ object roberto{
 object chuckNorris {
 	var peso = 900
 	var llamar = true
-		method llamar(){
+		method puedeLlamar(){
 			return llamar 
-		}		
+		}
+	method peso(){
+		return peso
+	}		
 }
 object neo{
 	var peso = 0
-	var  Llamar 
-	var property llamar = 
+	var property credito = true
+	method puedeLlamar(){
+			return credito
+		}
+	method peso(){
+		return peso
+	}
 }

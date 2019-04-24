@@ -2,14 +2,14 @@ import mensajeros.*
 
 import transporte.*
 
-object puenteDeBrookyln {
-	method dejaPasar(){
-		//si peso menos de media tonelada
+object puenteDeBrooklyn {
+	method dejaPasar(mensajero){
+		return (mensajero.peso() <= 1000)
 	}
 }
 
-object laMatrix {
-	method dejaPasar(){
-		//si puede hacer una llamada
+object matrix {
+	method dejaPasar(mensajero){
+		return mensajero.puedeLlamar()
 	}
 }
